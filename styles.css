@@ -1,0 +1,483 @@
+/*--- RESET GENERAL ---*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* Evita espacios extra debajo de las imágenes */
+}
+
+
+/*--- TIPOGRAFÍA GENERAL Y CONTENEDORES ---*/
+body {
+  font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100%;
+  overflow-x: hidden;
+  /* Evita scroll horizontal global */
+  position: relative;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background-color: white;
+  position: relative;
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
+.navegacion ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navegacion a {
+  position: relative;
+  text-decoration: none;
+  color: plum;
+  padding: 10px 0;
+  transition: color 0.3s;
+}
+
+/* Subrayado animado */
+.navegacion a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: plum;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navegacion a:hover::after {
+  transform: scaleX(1);
+}
+
+.navegacion a:hover {
+  color: plum;
+}
+
+/* Estilos botón hamburguesa (oculto en escritorio) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: plum;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animación a 'X' cuando está activo */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ---- HERO ---- */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Imágenes/Fondo Hero.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* height: 500px;  <-- Usar min-height para mejor adaptación */
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5%;
+  color: white;
+}
+
+.hero-contenido {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  width: 80%;
+  text-align: left;
+}
+
+.hero-titulo {
+  margin-bottom: 16px;
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.hero-texto {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.boton-hero {
+  display: inline-block;
+  padding: 12px 100px;
+  border-radius: 999px;
+  font-weight: 700;
+  background-color: white;
+  color: plum;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+/* --- NOTICIAS ---*/
+.noticias {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.titulo-noticias {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.flex-noticias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.articulo-noticias {
+  flex: 1 1 220px;
+  max-width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.articulo-noticias:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-noticia {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.titulo-noticia {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.texto-noticias {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: gray;
+}
+
+.boton-leer-mas-noticias {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: plum;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.boton-leer-mas-noticias:hover {
+  background-color: rebeccapurple;
+}
+
+/*--- TESTIMONIOS ---*/
+.testimonios {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.titulo-testimonios {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.flex-testimonios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonio {
+  flex: 1 1 220px;
+  max-width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-testimonio {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  object-fit: cover;
+}
+
+.titulo-testimonios-item {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.texto-testimonios {
+  margin-bottom: 15px;
+}
+
+.boton-seguir-leyendo-testimonios {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: plum;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.boton-seguir-leyendo-testimonios:hover {
+  background-color: rebeccapurple;
+}
+
+/* --- FORMULARIO ---*/
+.formulario-seccion {
+  width: 80%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-formulario {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label-form {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+}
+
+.boton-enviar-formulario {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background-color: plum;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- FOOTER ---*/
+.footer {
+  margin-top: 60px;
+  padding: 30px 0;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.texto-redes-sociales .boton-red-social,
+.aviso-legal {
+  color: plum;
+  text-decoration: none;
+}
+
+.texto-redes-sociales .boton-red-social:hover,
+.aviso-legal:hover {
+  text-decoration: underline;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN (BREAKPOINT 767px)
+   =========================================== */
+
+@media (max-width: 767px) {
+
+  /* Eliminación total de scrolls horizontales */
+  /* body, html { overflow-x: hidden; }  <-- Ya aplicado globalmente */
+
+  .container {
+    width: 90%;
+  }
+
+  /* Implementación Menú Hamburguesa */
+  .hamburger {
+    display: flex;
+    /* Se muestra en móvil */
+  }
+
+  .navegacion {
+    /* Se oculta el menú normal con transición */
+    display: block;
+    /* Necesario para la transición, lo manejamos con max-height */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    /* Quitar padding inicial para que no ocupe espacio al estar cerrado */
+    padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease;
+  }
+
+  .navegacion.active {
+    /* display: block; <--- Ya no usamos toggle de display */
+    max-height: 500px;
+    /* Suficiente para el contenido */
+    opacity: 1;
+    padding: 30px 20px;
+    /* Padding final al abrir */
+  }
+
+  .navegacion ul {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .navegacion a {
+    font-size: 1.2rem;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+  }
+
+  .navegacion a:last-child {
+    border-bottom: none;
+  }
+
+  /* Rediseño sección Hero */
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .hero-contenido {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-titulo {
+    font-size: 1.8rem;
+  }
+
+  .boton-hero {
+    align-self: center;
+    padding: 12px 50px;
+  }
+
+  /* Adaptación Flexbox a modo Wrap */
+  .flex-noticias,
+  .flex-testimonios {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .articulo-noticias,
+  .testimonio {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Ajuste de paddings, márgenes y fuentes */
+  .titulo-noticias,
+  .titulo-testimonios {
+    font-size: 1.6rem;
+  }
+
+  .formulario-seccion {
+    width: 100%;
+    padding: 30px 15px;
+  }
+}
